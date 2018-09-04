@@ -1,0 +1,16 @@
+ul li {
+    list-style: none;
+    background-color: rgb(184, 48, 48);
+    padding: 5px 20px;
+    display: block;
+}
+
+ul {
+    display: flex;
+    text-decoration: none;
+}
+
+li a {
+    text-decoration: none;
+    color: white !important;
+}
