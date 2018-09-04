@@ -1,27 +1,20 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { Feature2Module } from './feature2/feature2.module';
-import { Feature1Module } from './feature1/feature1.module';
 
 
-const routes: Routes = [
-  // { path: '', redirectTo: '/contacts', pathMatch: 'full' }, 
+const routes: Routes = 
+[
   
-  // { path: '', loadChildren: 'app/feature1/feature1.module#Feature1Module'},
- //  { path: 'feature1', loadChildren: 'app/feature1/feature1.module#Feature1Module'}
-  // { path: 'feature2', loadChildren: 'app/feature2/feature2.module#Feature2Module'}
+  { path: '', loadChildren: './src/app/feature1/feature1.module#Feature1Module'},
+  { path: 'feature1', loadChildren: './src/app/feature1/feature1.module#Feature1Module'},
+  { path: 'feature2', loadChildren: './src/app/feature2/feature2.module#Feature2Module'}
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes),
-    Feature1Module,
-    Feature2Module
-  ],
-  declarations: [],
-  exports:[RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports:[RouterModule],
+  declarations: []
+  
 })
 export class RoutingModule {
  
