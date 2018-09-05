@@ -6,9 +6,18 @@ import { F1c2Component } from './f1c2/f1c2.component';
 
 const routes: Routes = [
   
-        { path: '', component: F1c1Component },
-        { path: 'red', component: F1c1Component },
-        { path: 'green', component: F1c2Component }
+        { 
+          path: '', 
+          component: F1c1Component 
+        },
+        {
+           path: 'red', 
+           component: F1c1Component 
+        },
+        {
+           path: 'green', 
+           component: F1c2Component 
+        }
  ];
 
 @NgModule({

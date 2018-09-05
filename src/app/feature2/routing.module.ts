@@ -6,9 +6,18 @@ import { F2c2Component } from './f2c2/f2c2.component';
 
 const routes: Routes = [
   
-        { path: '', component: F2c1Component },
-        { path: 'f2c2', component: F2c2Component },
-        { path: 'f2c1', component: F2c1Component }
+        {
+           path: '', 
+           component: F2c1Component 
+        },
+        {
+           path: 'f2c2', 
+           component: F2c2Component 
+        },
+        {
+           path: 'f2c1', 
+           component: F2c1Component 
+        }
    ];
 
 @NgModule({
