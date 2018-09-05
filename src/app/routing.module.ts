@@ -5,10 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = 
 [
   
-  // { 
-  //   path: '',
-  //   loadChildren: './feature1/feature1.module#Feature1Module'
-  // },
+  { 
+    path: '',
+    loadChildren: './feature1/feature1.module#Feature1Module'
+  },
   { 
     path: 'feature1', 
     loadChildren: './feature1/feature1.module#Feature1Module'
