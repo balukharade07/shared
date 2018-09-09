@@ -1,0 +1,15 @@
+.header {
+    background-color: #ccc;
+    padding: 20px;
+}
+
+.footer {
+    background-color: brown;
+    padding: 20px;
+    color: white;
+}
+
+body {
+    left: auto;
+    top: auto;
+}
