@@ -1,0 +1,58 @@
+body {
+    width: 100%;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    background-color: #ccc;
+}
+
+header ul li {
+    cursor: pointer;
+    padding: 20px 10px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 22px 30px;
+}
+
+header ul li a:hover {
+    background-color: black;
+    color: #fff;
+}
+
+footer {
+    background-color: #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.row ul {
+    list-style: none;
+    background-color: #ccc;
+}
+
+.row ul li {
+    cursor: pointer;
+    padding: 20px 10px;
+}
+
+.row ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 20px 30px;
+}
+
+.row ul li a:hover {
+    color: rgb(105, 105, 214);
+}
+
+.row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-right: 0px !important;
+    margin-left: -15px !important;
+}
