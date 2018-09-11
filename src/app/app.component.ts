@@ -7,8 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'New';
-  // x = 'abc';
-  // p = 'xy';
-  // b = 'bk';
-  // today = new Date();
+  
 }
