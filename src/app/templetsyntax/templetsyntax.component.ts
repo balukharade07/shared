@@ -12,8 +12,6 @@ const BALU: Kharade[]=[
   {
     id:1,
     name:'Pramod'
-
-    
   },
   {
     id:2,
