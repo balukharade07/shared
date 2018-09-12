@@ -1,18 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 
+export class Kharade{
+
+  id : number;
+  name :string;
+  
+}
+
+const BALU: Kharade[]=[
+
+  {
+    id:1,
+    name:'Pramod'
+  },
+  {
+    id:2,
+    name:'Nitin'
+  },
+  {
+    id:3,
+    name:'Nilesh'
+  },
+  {
+    id:4,
+    name:'Sagar'
+  },
+  {
+    id:5,
+    name:'Sarjerao'}
+]
+
 @Component({
   selector: 'app-templetsyntax',
   templateUrl: './templetsyntax.component.html',
   styleUrls: ['./templetsyntax.component.css']
 })
-export class TempletsyntaxComponent implements OnInit {
+export class TempletsyntaxComponent  {
 
   constructor() { }
+
+ 
+  Kharade = BALU;
 
   totalCars: number = 985;
   isHidden : boolean = false;
   isCarSelected = false;
-  name = 'welcome';
+  // name = 'welcome';
 
   status = true;
   checkSpecial(){
@@ -42,7 +75,6 @@ export class TempletsyntaxComponent implements OnInit {
   // b = 'bk';
   // today = new Date();
   
-  ngOnInit() {
-  }
+  
 
 }

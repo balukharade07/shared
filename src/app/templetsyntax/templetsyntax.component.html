@@ -1,9 +1,3 @@
-<!-- <h2>Pipe Example</h2>
-<p>{{x | myPipe:p}}</p>
-<h2>1. Today is {{today}}</h2>
-<h2>2. Today is {{today | date}}</h2>
-<h2>3. Today is {{today | date:"dd/MM/yyyy"}}</h2> -->
-
 <!-- 1. {{ }} for interpolation. -->
 <h1>BMW</h1>
 <h2>Total {{ totalCars }}</h2>
@@ -52,3 +46,9 @@
 
 <h2>ngStyle Directive : [ngStyle]='object'</h2>
 <p [ngStyle]='styleConfig'>So many styles applied on me</p>
+
+<ul class="Kharade">
+    <li *ngFor="let BALU of Kharade">
+        <span>{{BALU.id}}</span> {{BALU.name}}
+    </li>
+</ul>
