@@ -8,6 +8,7 @@ export class Kharade{
 }
 
 const BALU: Kharade[]=[
+  
 
   {
     id:1,
