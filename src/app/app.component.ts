@@ -25,6 +25,8 @@ showData() {
   });
 }
 
+
+
 setdata(){
   this.fetchdata.postdata(this.items).subscribe(Response => console.log(Response));
   
