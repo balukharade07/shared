@@ -1,0 +1,5 @@
+<h1>HTTP Service</h1>
+
+<button (click)='showData();show=true'>Fetch data from remote</button>
+<button (click)='setdata();show=true'>Postdata from remote</button>
+<p *ngIf='show'>{{x | json}}</p>
