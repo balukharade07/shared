@@ -21,7 +21,7 @@ export class FetchdataService {
   constructor(private http : HttpClient) { }
 
   getdata(){
-    return this.http.get(this.remoteUrl);
+    return this.http.get(this.dataUrl);
   }
   postdata(items){
     return this.http.post(this.remoteUrl,items,this.httpOptions);
