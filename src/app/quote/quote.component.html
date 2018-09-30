@@ -1,0 +1,7 @@
+<div>
+
+    <input type="text" [(ngModel)]="name">
+    <button (click)="add()">Add quote</button> {{quotes | json}}
+    <!-- <button (click)="add1()">Remove quote</button> -->
+    <li *ngFor="let sms1 of quotes"> {{sms1}} </li>
+</div>
