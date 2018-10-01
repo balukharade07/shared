@@ -1,7 +1,20 @@
-<div>
+<div class="container">
+    <div class="row content">
+        <div class="col-md-6">
+            <input type="text" [(ngModel)]="name" placeholder="Write Your Best Quotes">
+            <button (click)="add()" [disabled]="item">Add quote</button>
+            <!-- {{quotes | json}} -->
 
-    <input type="text" [(ngModel)]="name">
-    <button (click)="add()">Add quote</button> {{quotes | json}}
-    <!-- <button (click)="add1()">Remove quote</button> -->
-    <li *ngFor="let sms1 of quotes"> {{sms1}} </li>
+            <li *ngFor="let sms1 of quotes; let i = index" (click)="remove(i)"> {{sms1}}</li>
+        </div>
+        <li *ngIf="bindEmail;then logout else login"></li>
+        <ng-template #logout>
+            <li><a routerLink="/logout">Logout</a></li>
+        </ng-template>
+        <ng-template #login>
+            <li><a routerLink="/login">Login</a></li>
+        </ng-template>
+
+        <button (click)="function()">Toggale</button>
+    </div>
 </div>
