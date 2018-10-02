@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-quote',
@@ -9,16 +10,21 @@ export class QuoteComponent  {
 
   quotes=[ "Balasaheb"];
   name = "";
+  toggle="hide";
   item = false;
   bindEmail = false;
   add(){
     if(this.quotes.length>10){
+     
        this.item = true;
-    }else{
+       alert("your 10 Best quotes is there");
+    }
+    else{
      
       this.quotes.push(this.name);
      
     }
+
    
   }
   remove(a){
@@ -30,8 +36,10 @@ export class QuoteComponent  {
    if( this.bindEmail == false)
    {
     this.bindEmail = true;
+    this.toggle="Show";
    }else{
     this.bindEmail = false;
+    this.toggle="hide";
    }
   }
  

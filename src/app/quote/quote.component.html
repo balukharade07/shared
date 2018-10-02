@@ -1,8 +1,12 @@
 <div class="container">
     <div class="row content">
         <div class="col-md-6">
-            <input type="text" [(ngModel)]="name" placeholder="Write Your Best Quotes">
-            <button (click)="add()" [disabled]="item">Add quote</button>
+            <div>
+                <input type="text" [(ngModel)]="name" class="form-control" maxlength="10" required #uname="ngModel" placeholder="Write Your Best Quotes">
+                <span [hidden]="uname.valid || uname.pristine" class="color">
+                * Name is required
+            </span></div>
+            <button class="btn btn-primary" (click)="add()" [disabled]="item" [disabled]="!uname.valid">Add quote</button>
             <!-- {{quotes | json}} -->
 
             <li *ngFor="let sms1 of quotes; let i = index" (click)="remove(i)"> {{sms1}}</li>
@@ -15,6 +19,6 @@
             <li><a routerLink="/login">Login</a></li>
         </ng-template>
 
-        <button (click)="function()">Toggale</button>
+        <button class="btn btn-success" (click)="function()">{{toggle}}</button>
     </div>
 </div>
