@@ -1,24 +1,29 @@
 <div class="container">
     <div class="row content">
-        <div class="col-md-6">
+        <div class="col-md-6 center ">
             <div>
-                <input type="text" [(ngModel)]="name" class="form-control" maxlength="10" required #uname="ngModel" placeholder="Write Your Best Quotes">
-                <span [hidden]="uname.valid || uname.pristine" class="color">
-                * Name is required
-            </span></div>
-            <button class="btn btn-primary" (click)="add()" [disabled]="item" [disabled]="!uname.valid">Add quote</button>
-            <!-- {{quotes | json}} -->
+                <input trim type="text" [(ngModel)]="name" class="form-control bottom required " ng-pattern="/^\S{0,50}$/" required #uname="ngModel" placeholder="Write Your Best Quotes">
+                <p [hidden]="uname.valid || uname.pristine" class="color">
+                    * Name is required
+                </p>
+                <button class="btn btn-danger bottom" (click)="add()" [disabled]="item" [disabled]="!uname.valid">Add quote</button>
+                <!-- {{quotes | json}} -->
 
-            <li *ngFor="let sms1 of quotes; let i = index" (click)="remove(i)"> {{sms1}}</li>
+                <li *ngFor="let sms1 of quotes; let i = index" (click)="remove(i)" class="alert alert-info"><b>{{sms1}}</b> </li>
+
+            </div>
         </div>
-        <li *ngIf="bindEmail;then logout else login"></li>
-        <ng-template #logout>
-            <li><a routerLink="/logout">Logout</a></li>
-        </ng-template>
-        <ng-template #login>
-            <li><a routerLink="/login">Login</a></li>
-        </ng-template>
+        <div class="col-md-6">
+            <li *ngIf="bindEmail;then logout else login"></li>
+            <ng-template #logout>
+                <li><a routerLink="/logout">Logout</a></li>
+            </ng-template>
+            <ng-template #login>
+                <li><a routerLink="/login">Login</a></li>
+            </ng-template>
 
-        <button class="btn btn-success" (click)="function()">{{toggle}}</button>
+            <button class="btn btn-success" (click)="function()">{{toggle}}</button>
+        </div>
+
     </div>
 </div>

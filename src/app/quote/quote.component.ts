@@ -8,13 +8,17 @@ import { empty } from 'rxjs';
 })
 export class QuoteComponent  {
 
-  quotes=[ "Balasaheb"];
+  quotes=[ 
+    "Work hard, stay positive, and get up early. It's the best part of the day.",
+    "Always do your best. What you plant now, you will harvest later.",
+    "Keep your face to the sunshine and you cannot see a shadow."
+];
   name = "";
   toggle="hide";
   item = false;
   bindEmail = false;
   add(){
-    if(this.quotes.length>10){
+    if(this.quotes.length>9){
      
        this.item = true;
        alert("your 10 Best quotes is there");
@@ -27,6 +31,7 @@ export class QuoteComponent  {
 
    
   }
+   
   remove(a){
     this.item = false;
     this.quotes.splice(a,1);

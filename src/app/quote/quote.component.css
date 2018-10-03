@@ -6,3 +6,31 @@ li {
 .color {
     color: red;
 }
+
+.center {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    margin: auto;
+}
+
+.required:after {
+    content: "REQUIRED";
+    color: orange;
+    margin-left: 1em;
+    /* space between the input element and the text */
+    padding: .1em;
+    background-color: #fff;
+    font-size: .8em;
+    border: .1em solid orange;
+}
+
+li {
+    cursor: pointer;
+}
+
+.bottom {
+    margin-bottom: 20px;
+}
