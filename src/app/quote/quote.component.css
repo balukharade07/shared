@@ -1,6 +1,7 @@
 li {
     text-decoration: none;
     list-style: none;
+    cursor: pointer;
 }
 
 .color {
@@ -27,10 +28,18 @@ li {
     border: .1em solid orange;
 }
 
-li {
-    cursor: pointer;
-}
-
 .bottom {
     margin-bottom: 20px;
+}
+
+.left {
+    float: right;
+}
+
+.top {
+    margin-top: -7px;
+}
+
+.flex {
+    display: flex;
 }

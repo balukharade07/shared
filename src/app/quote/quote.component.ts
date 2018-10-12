@@ -18,19 +18,18 @@ export class QuoteComponent  {
   item = false;
   bindEmail = false;
   add(){
-    if(this.quotes.length>9){
-     
+    if(this.quotes.length > 9){
        this.item = true;
        alert("your 10 Best quotes is there");
     }
     else{
-     
-      this.quotes.push(this.name);
-     
-    }
-
-   
-  }
+     this.quotes.push(this.name);
+     this.name = "";
+     }
+}
+// reset(){
+//   this.name = "";
+// }
    
   remove(a){
     this.item = false;
