@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'New';
+  time= "Timeing Project";
+  a = 0;
+  strat(){
+ 
+    if(this.a < 5 ){
+      
+      this.a++;
+      //alert(this.a);
+       
+    }
+
+  }
 }
