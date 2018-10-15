@@ -8,15 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'New';
   time= "Timeing Project";
-  a = 0;
+  a:number = 0;
   strat(){
- 
-    if(this.a < 5 ){
+      for (this.a = 1;this.a < 10;this.a++)
+      alert(this.a);
       
-      this.a++;
-      //alert(this.a);
+      
        
-    }
+    
 
   }
 }
