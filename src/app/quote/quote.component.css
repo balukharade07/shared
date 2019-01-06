@@ -43,3 +43,10 @@ li {
 .flex {
     display: flex;
 }
+
+.city{
+    
+    color: #fff;
+    padding: 5px;
+}
+

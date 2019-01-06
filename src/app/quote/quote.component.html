@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row content">
-        <div class="col-md-6 center ">
+        <div class="col-md-8 ">
             <div>
                 <div class="flex">
                     <p class=" col-md-11"><input trim type="text" [(ngModel)]="name" class="form-control bottom required" required #uname="ngModel" placeholder="Write Your Best Quotes"></p>
@@ -20,7 +20,7 @@
             </div>
         </div> 
         <!-- sranka29@rediffmail.com -->
-        <div class="col-md-6">
+        <div class="col-md-4">
             <li *ngIf="bindEmail;then logout else login"></li>
             <ng-template #logout>
                 <li><a routerLink="/logout">Logout</a></li>
@@ -30,6 +30,22 @@
             </ng-template>
 
             <button class="btn btn-success" (click)="function()">{{toggle}}</button>
+        </div>
+
+    </div>
+    
+
+<div class="row">   
+        <div class="col-xl-12">
+           <table class="table">
+               <tbody>
+                   <tr *ngFor="let kharade of Family">
+                       <td>{{kharade.name}}</td>
+                       <td>{{kharade.lastname}}</td>
+                       <td> <span class="city" [ngStyle]="{'background-color':getColor(kharade.city)}"> {{kharade.city}}</span></td>
+                   </tr>
+               </tbody>
+           </table>
         </div>
 
     </div>

@@ -30,7 +30,36 @@ export class QuoteComponent  {
 // reset(){
 //   this.name = "";
 // }
-   
+
+Family:any=[
+  {
+    'name':'Kiran',
+    'lastname':'kharade',
+    'city':"Kamti",
+   },
+   {
+    'name':'Balu',
+    'lastname':'kharade',
+    'city':'Pune',
+   },
+   {
+    'name':'Shrikant',
+    'lastname':'kharade',
+    'city':'Solapur',
+   }
+]
+
+getColor(city) { 
+  
+  switch (city) {
+    case 'Kamti':
+      return 'green';
+    case 'Pune':
+      return 'blue';
+    case 'Solapur':
+      return 'red';
+  }
+}   
   remove(a){
     this.item = false;
     this.quotes.splice(a,1);
