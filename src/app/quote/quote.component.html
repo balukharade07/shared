@@ -2,23 +2,31 @@
     <div class="row content">
         <div class="col-md-8 ">
             <div>
-                <div class="flex">
-                    <p class=" col-md-11"><input trim type="text" [(ngModel)]="name" class="form-control bottom required" required #uname="ngModel" placeholder="Write Your Best Quotes"></p>
+                <form [formGroup]="myforms">
+                <div >
+                    <p class=" col-md-11">
 
-                    <p [hidden]="uname.valid || uname.pristine" class="color col-md-1">
-                        *
-                    </p>
-                </div>
+                    <input trim type="text" [(ngModel)]="name" formControlName="textinput" pattern="/^[a-zA-Z ]+$/" class="form-control bottom required" required  placeholder="Write Your Best Quotes" [ngClass]="{ 'is-invalid':myforms.get('textinput').hasError('required') && myforms.get('textinput').touched || invalid}">
+                
+                </p>
 
-                <button class="btn btn-success bottom" (click)="add()" [disabled]="item" [disabled]="!uname.valid">Add quote</button>
+               <br>
+                        
+                   
+                </div><br><br><br>
+                <div *ngIf="myforms.get('textinput').hasError('required') && myforms.get('textinput').touched || invalid">Text Filds is required</div>
+                <div *ngIf="myforms.get('textinput').hasError('pattern')">Not valid</div>
+                <button class="btn btn-success bottom" (click)="add()" [disabled]="item" >Add quote</button>
                 <!-- {{quotes | json}} -->
                 <!-- <button class="btn btn-danger bottom left" (click)="reset()" [disabled]="item" [disabled]="!uname.valid" type="reset">Reset</button> -->
-                <li *ngFor="let sms1 of quotes; let i = index" (click)="remove(i)" class="alert alert-info"><b>{{sms1 | titlecase}}</b>
+                <li *ngFor="let sms1 of quotes; let i = index;" (click)="remove(i)" class="alert alert-info"><b>{{sms1 | titlecase}}</b>
                     <button (click)="remove(i)" class="left top btn btn-danger"><i class="fa fa-trash  " aria-hidden="true"></i></button>
                 </li>
-
+                <h3 class="text-danger bg-danger" *ngIf="quotes?.length == 0">No Items added</h3>
+            </form>
             </div>
         </div> 
+       
         <!-- sranka29@rediffmail.com -->
         <div class="col-md-4">
             <li *ngIf="bindEmail;then logout else login"></li>

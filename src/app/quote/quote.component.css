@@ -50,3 +50,11 @@ li {
     padding: 5px;
 }
 
+h3{
+    padding: 10px;
+}
+
+.is-invalid{
+    border: 1px solid red;
+}
+
