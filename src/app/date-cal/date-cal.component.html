@@ -1,0 +1,161 @@
+<div class="main-content">
+
+<section>
+
+    <div class="row" >
+        
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pl-0 pt-2 pr-0">
+             <form [formGroup]='myForm' (ngSubmit)="onSubmit()">
+                 <div class="row">
+                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 pl-0">
+                       
+                         <div ><label>Todays Date </label></div>
+                         <div>
+                         <!-- <input [owlDateTimeTrigger]="dt3"  [max]="maxDate"   [owlDateTime]="dt3" formControlName="Todays_Date" class="form-control calendar_input"  readonly placeholder="Enter date"  [ngClass]=" {'input-error': myForm.controls['Todays_Date'].invalid && myForm.controls['Todays_Date'].touched  || myForm.controls['Todays_Date'].untouched && submitted || dirty }">
+                         <owl-date-time [pickerType]="'calendar'" #dt3  ></owl-date-time> -->
+
+                         <input class="form-control" formControlName="Todays_Date" readonly placeholder="Enter date" name="Todays_Date" value="{{today | date : 'dd/MM/yyyy'}}">
+                         <!-- <p class="form-error " *ngIf="myForm.get('Todays_Date').hasError('required') && myForm.get('Todays_Date').touched || (myForm.controls['Todays_Date'].invalid && myForm.controls['Todays_Date'].untouched && submitted)"><span *ngIf="myForm.get('Todays_Date').hasError('required') ">Date is required</span></p> -->
+                         </div>
+                     
+                                                 
+                       
+                 </div>
+                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 responsiveleftdob">
+                    <div ><label>DOB</label></div>
+                    <input  class="form-control" type="date" id="txtdate" (change)="onSearchChange($event.target.value)"  formControlName="DOB"  [ngClass]=" {'input-error1': myForm.controls['DOB'].invalid && myForm.controls['DOB'].touched  || myForm.controls['DOB'].untouched && submitted || dirty }">
+                    <p class="form-error " *ngIf="myForm.get('DOB').hasError('required') && myForm.get('DOB').touched || (myForm.controls['DOB'].invalid && myForm.controls['DOB'].untouched && submitted)"><span *ngIf="myForm.get('DOB').hasError('required') ">Date is required</span></p>
+                    <!-- <div>
+                    <input [owlDateTimeTrigger]="dt2"  [owlDateTime]="dt2" formControlName="DOB" class="form-control calendar_input"  readonly placeholder="Enter date"  [ngClass]=" {'input-error': myForm.controls['DOB'].invalid && myForm.controls['DOB'].touched  || myForm.controls['DOB'].untouched && submitted || dirty }">
+                    <owl-date-time [pickerType]="'calendar'" #dt2  ></owl-date-time>
+                    <p class="form-error " *ngIf="myForm.get('DOB').hasError('required') && myForm.get('DOB').touched || (myForm.controls['DOB'].invalid && myForm.controls['DOB'].untouched && submitted)"><span *ngIf="myForm.get('DOB').hasError('required') ">Date is required</span></p>
+                    </div> -->
+                    
+                 </div>
+                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 pr-0 responsiveleft">
+                         
+                        <div ><label>Exact Age</label></div>
+                       <div class="row">
+                          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 pl-0 pb-3">
+                            <input type="text" class="form-control"  readonly  value="{{years}}" >
+                          </div>
+                          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 pl-0 pb-3">
+                              <input type="text" class="form-control"  readonly value="{{days}}">
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 pl-0 pb-3">
+                                <input type="text" class="form-control"  value="{{totime | date : 'hh'}}"  readonly >
+                              </div>
+                              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 pl-0 pb-3">
+                                  <input type="text" class="form-control" value="{{totime | date : 'mm'}}"  readonly >
+                                </div>
+                       </div>
+                             
+                         
+                     </div>
+                     </div>
+                    
+              
+                     <!-- <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 pt-1">
+                            <label>Weight</label> 
+                             <div class="select-style typeof" [ngClass]=" {'input-error': myForm.controls['Weight'].invalid && myForm.controls['Weight'].touched  || myForm.controls['Weight'].untouched && submitted || dirty }">
+                               <select  class="" formControlName="Weight">
+                                 <option value="01">01</option>
+                                 <option value="02">02</option>
+                                 <option value="03">03</option>
+                                 <option value="" disabled selected>Select</option>
+                               </select>
+                              
+                              </div>
+                              <p class="form-error " *ngIf="myForm.get('Weight').hasError('required') && myForm.get('Weight').touched || (myForm.controls['Weight'].invalid && myForm.controls['Weight'].untouched && submitted)"><span *ngIf="myForm.get('Weight').hasError('required') ">Weight is required</span></p>
+                          </div>
+                          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 pt-1">
+                              <label>Height</label> 
+                               <div class="select-style typeof" [ngClass]=" {'input-error': myForm.controls['Height'].invalid && myForm.controls['Height'].touched  || myForm.controls['Height'].untouched && submitted || dirty }">
+                                 <select  class="" formControlName="Height">
+                                   <option value="01">01</option>
+                                   <option value="02">02</option>
+                                   <option value="03">03</option>
+                                   <option value="" disabled selected>Select</option>
+                                 </select>
+                                </div>
+                                <p class="form-error " *ngIf="myForm.get('Height').hasError('required') && myForm.get('Height').touched || (myForm.controls['Height'].invalid && myForm.controls['Height'].untouched && submitted)"><span *ngIf="myForm.get('Height').hasError('required') ">Height is required</span></p>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 pt-1">
+                                <label>Length</label> 
+                                <div class="select-style typeof" [ngClass]=" {'input-error': myForm.controls['Length'].invalid && myForm.controls['Length'].touched  || myForm.controls['Length'].untouched && submitted || dirty }">
+                                    <select  class="" formControlName="Length">
+                                      <option value="01">01</option>
+                                      <option value="02">02</option>
+                                      <option value="03">03</option>
+                                      <option value="" disabled selected>Select</option>
+                                    </select>
+                                   </div>
+                                   <p class="form-error " *ngIf="myForm.get('Length').hasError('required') && myForm.get('Length').touched || (myForm.controls['Length'].invalid && myForm.controls['Length'].untouched && submitted)"><span *ngIf="myForm.get('Length').hasError('required') ">Length is required</span></p>
+                              </div>
+                              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 pt-1">
+                                  <label>Head Diameter</label> 
+                                  <div class="select-style typeof" [ngClass]=" {'input-error': myForm.controls['Head_Diameter'].invalid && myForm.controls['Head_Diameter'].touched  || myForm.controls['Head_Diameter'].untouched && submitted || dirty }">
+                                      <select  class="" formControlName="Head_Diameter">
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="" disabled selected>Select</option>
+                                      </select>
+                                     </div>
+                                     <p class="form-error " *ngIf="myForm.get('Head_Diameter').hasError('required') && myForm.get('Head_Diameter').touched || (myForm.controls['Head_Diameter'].invalid && myForm.controls['Head_Diameter'].untouched && submitted)"><span *ngIf="myForm.get('Head_Diameter').hasError('required') ">Head_Diameter is required</span></p>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 pt-1">
+                                    <label>Neck Diameter</label> 
+                                    <div class="select-style typeof" [ngClass]=" {'input-error': myForm.controls['Neck_Diameter'].invalid && myForm.controls['Neck_Diameter'].touched  || myForm.controls['Neck_Diameter'].untouched && submitted || dirty }">
+                                        <select  class="" formControlName="Neck_Diameter">
+                                          <option value="01">01</option>
+                                          <option value="02">02</option>
+                                          <option value="03">03</option>
+                                          <option value="" disabled selected>Select</option>
+                                        </select>
+                                       </div>
+                                       <p class="form-error " *ngIf="myForm.get('Neck_Diameter').hasError('required') && myForm.get('Neck_Diameter').touched || (myForm.controls['Neck_Diameter'].invalid && myForm.controls['Neck_Diameter'].untouched && submitted)"><span *ngIf="myForm.get('Neck_Diameter').hasError('required') ">Neck_Diameter is required</span></p>
+                                  </div>
+                                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 pt-1">
+                                      <label>Weist Diameter</label> 
+                                      <div class="select-style typeof" [ngClass]=" {'input-error': myForm.controls['Weist_Diameter'].invalid && myForm.controls['Weist_Diameter'].touched  || myForm.controls['Weist_Diameter'].untouched && submitted || dirty }">
+                                          <select  class="" formControlName="Weist_Diameter">
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="" disabled selected>Select</option>
+                                          </select>
+                                         </div>
+                                         <p class="form-error " *ngIf="myForm.get('Weist_Diameter').hasError('required') && myForm.get('Weist_Diameter').touched || (myForm.controls['Weist_Diameter'].invalid && myForm.controls['Weist_Diameter'].untouched && submitted)"><span *ngIf="myForm.get('Weist_Diameter').hasError('required') ">Weist_Diameter is required</span></p>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 pt-1">
+                                        <label>Shoulder width</label> 
+                                        <div class="select-style typeof" [ngClass]=" {'input-error': myForm.controls['Shoulder_width'].invalid && myForm.controls['Shoulder_width'].touched  || myForm.controls['Shoulder_width'].untouched && submitted || dirty }">
+                                            <select  class="" formControlName="Shoulder_width">
+                                              <option value="01">01</option>
+                                              <option value="02">02</option>
+                                              <option value="03">03</option>
+                                              <option value="" disabled selected>Select</option>
+                                            </select>
+                                           </div>
+                                           <p class="form-error " *ngIf="myForm.get('Shoulder_width').hasError('required') && myForm.get('Shoulder_width').touched || (myForm.controls['Shoulder_width'].invalid && myForm.controls['Shoulder_width'].untouched && submitted)"><span *ngIf="myForm.get('Shoulder_width').hasError('required') ">Shoulder_width is required</span></p>
+                                      </div>
+                     </div> -->
+    
+                     <div class="row">
+                         <div class="col-lg-12 buttn">
+                             <!-- <button  type="button"  class="btn CloseBTN ">Close</button> -->
+                             <button  type="submit" class="btn save">Save</button>
+                         </div>
+                    </div>
+            
+             </form>
+             
+    
+         </div>
+     
+     </div>
+</section>
+</div>
+

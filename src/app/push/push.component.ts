@@ -9,6 +9,15 @@ export class PushComponent implements OnInit {
 
   constructor() { }
 
+  newContact:any[];
+
+  onSubmit(){
+   alert("hii");
+  }
+
+  onSubmitSave(){
+   
+  }
   ngOnInit() {
   }
 

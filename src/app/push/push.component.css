@@ -10,8 +10,8 @@
     vertical-align: middle;
 }
 .form-inline label{
-    margin-right: 13px;
-    text-align: right;
+    
+    text-align: left;
     width: 110px;
 }
 
@@ -67,17 +67,9 @@ h3{
     font-weight: 400;
     letter-spacing: -0.28px;
     line-height: 18px;
+    float: right;
   }
 
-  .select-style5[_ngcontent-c6] {
-    border: 1px solid #cfcfcf;
-    border-radius: 5px;
-    margin-left: 24px;
-    overflow: hidden;
-    float: left;
-    /* margin-right: 14px; */
-    background: #fff url(/assets/images/patient/dropdown.png) no-repeat 88% 50%;
-}
 
 
   
@@ -89,4 +81,22 @@ h3{
 
   .inlinep{
     padding-right: 0px;
+  }
+.padding_left{
+  padding-left: 0;
+}
+  .btn_pop{
+    margin: 0px auto;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .select_options{
+    width: 331px;
+    height: 35px;
+    padding-left: 0;
+  }
+
+  .is-invalid{
+    border: 1px solid red;
   }
